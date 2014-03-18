@@ -113,17 +113,15 @@ function($parse, $compile, editableThemes, $rootScope, $document, editableContro
             scope.$parent[attrs.eForm] = scope.$form;
           }
 
-          // bind click - if no external form defined
-          if(!attrs.eForm) {
-            elem.addClass('editable-click');
-            elem.bind('click', function(e) {
-              e.preventDefault();
-              e.editable = eCtrl;
-              scope.$apply(function(){
-                scope.$form.$show();
-              });
+          // bind click
+          elem.addClass('editable-click');
+          elem.bind('click', function(e) {
+            e.preventDefault();
+            e.editable = eCtrl;
+            scope.$apply(function(){
+              scope.$form.$show();
             });
-          }
+          });
         }
 
       }
